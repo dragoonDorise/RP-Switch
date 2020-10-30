@@ -8,6 +8,18 @@ Pegasus Frontend Theme optimized for the Retroid Pocket 2 Screen. You need to ha
 
 Pegasus needs some setup work but is easy as pie if you follow mi [guide for dummies](https://github.com/dragoonDorise/pegasus-rp2-metadata)
 
+## Theme Installation
+
+1 Download the [latest version](https://github.com/dragoonDorise/RP-Switch/archive/1.0.zip)
+
+2 Unzip the downloaded file, rename the folder to RP-Switch
+
+1 Upload the folder to /pegasus-frontend/themes:
+
+/pegasus-frontend/themes/RP-Switch
+
+4 Open Pegasus, go to Settings - General - Theme and select RP Switch Theme
+
 ## Home Screen
 
 In the home screen you can navigate your Systems using your D-pad or use the option navbar to:
