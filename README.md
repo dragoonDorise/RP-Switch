@@ -1,6 +1,6 @@
 # Retroid Pocket Switch Theme
 
-<img src="hero.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/hero.jpg">
 
 Pegasus Frontend Theme optimized for the Retroid Pocket 2 Screen. You need to have Pegasus installed in your Retroid Pocket
 
@@ -19,15 +19,15 @@ In the home screen you can navigate your Systems using your D-pad or use the opt
 
 ### Light Mode
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/home.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/home.jpg">
 
 ### Dark Mode
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/home-dark.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/home-dark.jpg">
 
 You can also toggle the zoom level of the Systems list with a press on the button Y
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/home-zoom.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/home-zoom.jpg">
 
 ## Game List Screen
 
@@ -45,15 +45,15 @@ If you selected Dark Mode in the Home Page, the Game List will be presented in D
 
 ### Light mode
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/games3.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/games3.jpg">
 
 ### Dark mode
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/games3-dark.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/games3-dark.jpg">
 
 ### Search mode
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/search.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/search.jpg">
 Just press R2 Twice, enter the text you want to search, press the hide keyboard key in the Android virtual Keyboard and then press Down in the Dpad to go back to the Game list and select the game you want. **Don't press the Enter key, it wont work**
 
 ### Zoom levels
@@ -62,15 +62,15 @@ There are three zoom levels, you can toggle trough them by pressing hte button Y
 
 #### Three games
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/games3.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/games3.jpg">
 
 #### Four games
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/games4.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/games4.jpg">
 
 #### Five games
 
-<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/master/screenshots/games5.jpg">
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/games5.jpg">
 
 ## Thanks To
 
