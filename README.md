@@ -10,7 +10,7 @@ Pegasus needs some setup work but is easy as pie if you follow mi [guide for dum
 
 ## Theme Installation
 
-1 Download the [latest version](https://github.com/dragoonDorise/RP-Switch/archive/1.0.zip)
+1 Download the [latest version](https://github.com/dragoonDorise/RP-Switch/releases/latest)
 
 2 Unzip the downloaded file, rename the folder to RP-Switch
 
