@@ -294,6 +294,30 @@ import QtQuick 2.12
                         color:"transparent"
                         width: itemWidth
                         height: itemHeight
+
+                        Rectangle{
+                          id:game__inner_border
+                          width:parent.width-4
+                          height:parent.height-4
+                          anchors.horizontalCenter: parent.horizontalCenter
+                          anchors.verticalCenter: parent.verticalCenter                          
+                          color:"#c0c0c0"
+                        }
+
+                        Text{
+                          id:game__name
+                          text:modelData.title
+                          anchors.horizontalCenter: parent.horizontalCenter
+                          anchors.verticalCenter: parent.verticalCenter
+                          color: theme.title
+                          font.pixelSize: 20
+                          width: parent.width-20
+                          wrapMode: "WordWrap"
+                          horizontalAlignment: Text.AlignHCenter
+                          
+                        }
+                        
+                                                                       
                                                 
                         Image {
                             id: game_screenshot
@@ -314,7 +338,6 @@ import QtQuick 2.12
                         
                         Image {
                             id: gamelogo
-    
                             width: parent.width
                             height: parent.height
                             anchors {
@@ -340,10 +363,9 @@ import QtQuick 2.12
                             sourceSize { width: 256; height: 256 }
                             fillMode: Image.PreserveAspectFit
                             smooth: true
-                            visible: gamelogo.source !== ""
                             z:8
                         }
-                                                                       
+                        
                         Rectangle{
                           id: game__is_selected
                           width:parent.width

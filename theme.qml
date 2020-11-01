@@ -22,7 +22,13 @@ FocusScope {
   
   //Games index
   property var currentGameIndex: 0
-  property var currentGame: {return currentCollection.games.get(currentGameIndex)}
+  property var currentGame: {
+      if (currentCollection.shortName === "all-favorites")
+          return api.allGames.get(allFavorites.mapToSource(currentGameIndex))
+      if (currentCollection.shortName === "all-lastplayed")
+          return api.allGames.get(allLastPlayed.mapToSource(currentGameIndex))
+      return currentCollection.games.get(currentGameIndex)
+  }
   
   property var allCollections: {
       let collections = api.collections.toVarArray()
