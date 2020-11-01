@@ -27,6 +27,8 @@ FocusScope {
           return api.allGames.get(allFavorites.mapToSource(currentGameIndex))
       if (currentCollection.shortName === "all-lastplayed")
           return api.allGames.get(allLastPlayed.mapToSource(currentGameIndex))
+      if (searchValue !== '')
+          return  api.allGames.get(searchGames.mapToSource(currentGameIndex))          
       return currentCollection.games.get(currentGameIndex)
   }
   
