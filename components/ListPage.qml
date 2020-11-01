@@ -6,87 +6,6 @@ import QtQuick 2.12
     property var itemWidth : 600/itemsRow
     property var itemHeight : itemWidth
 
-    Keys.onPressed: {
-      //Launch game
-      if (api.keys.isAccept(event)) {
-          event.accepted = true;
-          currentGameIndex = index
-          launchSound.play()
-          currentGame.launch();                            
-          return;
-      }  
-      
-      //Back to Home            
-      if (api.keys.isCancel(event)) {
-          event.accepted = true;
-          // gameView.model = currentCollection.games
-          // gameViewStyle = 'standard'
-          searchValue=''
-          // header__search_input.focus = false
-          // gameView.focus = true 
-          
-          header__search_input.text='Search...'
-          navigate('HomePage');
-          return;
-      }  
-      
-      //toggleItemsRow     
-      if (api.keys.isFilters(event)) {
-          event.accepted = true;
-          toggleItemsRow();
-          
-          toggleSound.play()
-          //Show only current favs, not working right now...
-          // if ( gameViewStyle === 'standard'){
-          //   gameView.model = currentFavorites
-          //   gameViewStyle = 'favs'
-          //   return;
-          // }else{
-          //   gameView.model = currentCollection.games
-          //   gameViewStyle = 'standard'
-          // }
-          
-      }  
-      //Favorite
-      if (api.keys.isDetails(event)) {
-          event.accepted = true;
-          favSound.play()                            
-          currentGameIndex = index
-          currentGame.favorite = !currentGame.favorite
-          return;
-      }                        
-      //Next collection
-      if (api.keys.isNextPage(event)) {
-          event.accepted = true;
-          goBackSound.play()
-          currentCollectionIndex = currentCollectionIndex+1
-         
-          return;
-      }  
-      
-      //Prev collection
-      if (api.keys.isPrevPage(event)) {
-          event.accepted = true;
-          goBackSound.play()
-          currentCollectionIndex = currentCollectionIndex-1
-          return;
-      }  
-      
-      //Search
-      if (api.keys.isPageDown(event)) {
-          event.accepted = true;
-          goBackSound.play()
-          searchValue = ''
-          header__search_input.clear()            
-          header__search_input.focus = true
-          
-          return;
-      }  
-      
-      
-                  
-    }                          
-
 
     Rectangle {
         id: header
@@ -289,6 +208,89 @@ import QtQuick 2.12
                       id: delegateContainer
                       property bool selected: delegateContainer.GridView.isCurrentItem
                       property var gameViewStyle : 'standard'
+                    
+                    
+
+    Keys.onPressed: {
+      //Launch game
+      if (api.keys.isAccept(event)) {
+          event.accepted = true;
+          currentGameIndex = index
+          launchSound.play()
+          currentGame.launch();                            
+          return;
+      }  
+      
+      //Back to Home            
+      if (api.keys.isCancel(event)) {
+          event.accepted = true;
+          // gameView.model = currentCollection.games
+          // gameViewStyle = 'standard'
+          searchValue=''
+          // header__search_input.focus = false
+          // gameView.focus = true 
+          
+          header__search_input.text='Search...'
+          navigate('HomePage');
+          return;
+      }  
+      
+      //toggleItemsRow     
+      if (api.keys.isFilters(event)) {
+          event.accepted = true;
+          toggleItemsRow();
+          
+          toggleSound.play()
+          //Show only current favs, not working right now...
+          // if ( gameViewStyle === 'standard'){
+          //   gameView.model = currentFavorites
+          //   gameViewStyle = 'favs'
+          //   return;
+          // }else{
+          //   gameView.model = currentCollection.games
+          //   gameViewStyle = 'standard'
+          // }
+          
+      }  
+      //Favorite
+      if (api.keys.isDetails(event)) {
+          event.accepted = true;
+          favSound.play()                            
+          currentGameIndex = index
+          currentGame.favorite = !currentGame.favorite
+          return;
+      }                        
+      //Next collection
+      if (api.keys.isNextPage(event)) {
+          event.accepted = true;
+          goBackSound.play()
+          currentCollectionIndex = currentCollectionIndex+1
+         
+          return;
+      }  
+      
+      //Prev collection
+      if (api.keys.isPrevPage(event)) {
+          event.accepted = true;
+          goBackSound.play()
+          currentCollectionIndex = currentCollectionIndex-1
+          return;
+      }  
+      
+      //Search
+      if (api.keys.isPageDown(event)) {
+          event.accepted = true;
+          goBackSound.play()
+          searchValue = ''
+          header__search_input.clear()            
+          header__search_input.focus = true
+          
+          return;
+      }  
+      
+      
+                  
+    }                          
                     
                       Rectangle{
                         color:"transparent"
