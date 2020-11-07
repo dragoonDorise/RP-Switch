@@ -8,6 +8,11 @@ Pegasus Frontend Theme optimized for the Retroid Pocket 2 Screen. You need to ha
 
 Pegasus needs some setup work but is easy as pie if you follow mi [guide for dummies](https://github.com/dragoonDorise/pegasus-rp2-metadata)
 
+## Assets needed
+For this theme you need the following media types from [skraper](http://skraper.net):
+* screenshot
+* wheel
+
 ## Theme Installation
 
 1 Download the [latest version](https://github.com/dragoonDorise/RP-Switch/releases/latest)
