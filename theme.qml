@@ -22,6 +22,7 @@ FocusScope {
   
   //Games index
   property var currentGameIndex: 0
+
   property var currentGame: {
       if (currentCollection.shortName === "all-favorites")
           return api.allGames.get(allFavorites.mapToSource(currentGameIndex))
@@ -31,7 +32,7 @@ FocusScope {
           return  currentCollection.games.get(searchGames.mapToSource(currentGameIndex))   
       return currentCollection.games.get(currentGameIndex)
   }
-  
+      
   property var allCollections: {
       let collections = api.collections.toVarArray()
       collections.unshift({"name": "All Games", "shortName": "all-allgames", "games": api.allGames})      
@@ -73,24 +74,25 @@ FocusScope {
   
   //Used to hide or show the header
   property var headerHeightCorrection: api.memory.get('headerHeightCorrection') === 90 ? 90 : 0;
-
+  property var rp2ratio : root.height === 480 ? 1.98 : 1.88
   property var wrapperCSS : {
       "width": 640,
-      "height": 480,
+      "height": vpx(480*rp2ratio),
       "background": theme.background,      
   }
   
+
   
   property var headerCSS : {
       "width": wrapperCSS.width,
-      "height": 90,
+      "height": vpx(90*rp2ratio),
       "background": "transparent",
   }
   
   
   property var footerCSS : {
       "width": wrapperCSS.width,
-      "height": 49,
+      "height": vpx(49*rp2ratio),
       "background": "transparent",
       
   }    
@@ -102,7 +104,7 @@ FocusScope {
       
   }   
   
-  
+
   
   function toggleDarkMode(){
     if(theme === themeLight){
@@ -228,7 +230,7 @@ FocusScope {
 
         sourceModel: currentCollection.games
         filters: [            
-            RegExpFilter { roleName: "title"; pattern: searchValue; caseSensitivity: Qt.CaseInsensitive; enabled: searchValue != "" }            
+             RegExpFilter { roleName: "title"; pattern: searchValue; caseSensitivity: Qt.CaseInsensitive; enabled: searchValue != "" }                       
         ]
         // sorters: [
         //     RoleSorter { roleName: sortByFilter[sortByIndex]; sortOrder: orderBy }
@@ -248,8 +250,8 @@ FocusScope {
   Rectangle {
       id: wrapper
       color: wrapperCSS.background
-      width: wrapperCSS.width
-      height: wrapperCSS.height
+      width: 640
+      height: 480
       anchors.top: parent.top
         // Image {
         //     id: collectionLogo
@@ -263,8 +265,8 @@ FocusScope {
         
         // Rectangle{
         //     id: cropzone
-        //     width: wrapperCSS.width
-        //     height: wrapperCSS.height
+        //     width: 640
+        //     height: 480
         //     color: "transparent"
         //     border.color: "red"
         //     border.width: 1          
