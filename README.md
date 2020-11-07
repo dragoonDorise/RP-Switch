@@ -13,6 +13,10 @@ For this theme you need the following media types from [skraper](http://skraper.
 * screenshot
 * wheel
 
+You can also download some pre scraped assets from here: https://bit.ly/2Ie0p21
+
+*Keep in mind these assets may not work with your rom collection. These assets have been scrapped from a collection where there the rom file only has the game name and nothing else, ie: Super Mario World.zip and not Super Mario World (JP).zip. If you want to use this set you need to remove all the extra info from the rom filename.* You can rename your collection in Bulk using [this app for Windows](https://www.bulkrenameutility.co.uk/#mainscreen) or using Automator in a Mac.
+
 ## Theme Installation
 
 1 Download the [latest version](https://github.com/dragoonDorise/RP-Switch/releases/latest)
