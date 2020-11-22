@@ -43,7 +43,7 @@ import QtQuick 2.12
           anchors.topMargin: 18
           anchors.leftMargin: 30          
           color:"transparent"
-          width:parent.width-66
+          width:parent.width-60
           height: 40
           
           Rectangle{
@@ -192,11 +192,12 @@ import QtQuick 2.12
             visible: true
             color: "transparent"
             width: parent.width
+            height: parent.height
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
         
-             
+             clip:true
             
             GridView {
                 id: gameView
@@ -204,16 +205,18 @@ import QtQuick 2.12
                 height: parent.height
                 model: currentCollection.games
                 delegate: gameViewDelegate
-                clip:true
+                
                 anchors.left: parent.left
-                anchors.leftMargin: 22
+                anchors.leftMargin: 20
+                
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom        
-                focus: currentPage === 'ListPage' ? true : false ;
-                
+                focus: currentPage === 'ListPage' ? true : false ;                
+                anchors.topMargin: 35                     
                 snapMode: ListView.SnapOneItem
                 highlightRangeMode: ListView.StrictlyEnforceRange
-                
+                preferredHighlightBegin: 1
+                preferredHighlightEnd: itemWidth*itemsRow/2
                 Keys.onUpPressed:       { moveCurrentIndexUp();navSound.play(); }
                 Keys.onDownPressed:     { moveCurrentIndexDown();navSound.play(); }
                 Keys.onLeftPressed:     { moveCurrentIndexLeft();navSound.play(); }
@@ -228,7 +231,8 @@ import QtQuick 2.12
                       id: delegateContainer
                       property bool selected: delegateContainer.GridView.isCurrentItem
                       property var gameViewStyle : 'standard'
-                    
+                      width: itemWidth
+                      height: itemHeight
                     
                   
                       Keys.onPressed: {
@@ -303,7 +307,7 @@ import QtQuick 2.12
                         color:"transparent"
                         width: itemWidth
                         height: itemHeight
-
+                        clip:true
                         Rectangle{
                           id:game__inner_border
                           width:parent.width-4
@@ -322,17 +326,16 @@ import QtQuick 2.12
                           font.pixelSize: 20
                           width: parent.width-20
                           wrapMode: "WordWrap"
-                          horizontalAlignment: Text.AlignHCenter
-                          
+                          horizontalAlignment: Text.AlignHCenter                        
                         }
-                        
+
                                                                        
                                                 
                         Image {
                             id: game_screenshot
                             width: itemWidth    
                             height:   itemHeight
-                            //fillMode: Image.PreserveAspectFit
+                            fillMode: Image.PreserveAspectCrop
                             asynchronous: true    
                             source: {
                                 if (currentCollection.shortName !== "android") {
@@ -345,13 +348,24 @@ import QtQuick 2.12
                             }                                                               
                         }      
                         
+                        Rectangle{
+                          id:game_overlay
+                          width: itemWidth    
+                          height:   itemHeight
+                          color:"black"
+                          opacity:.3
+                          anchors {
+                                fill: parent
+                          }
+                        }
+                        
                         Image {
                             id: gamelogo
                             width: parent.width
                             height: parent.height
                             anchors {
                                 fill: parent
-                                margins: vpx(6)
+                                margins: 12
                             }
     
                             asynchronous: true
@@ -384,6 +398,8 @@ import QtQuick 2.12
                           border.color: selected ? "#10adc5" : wrapperCSS.background
                           border.width: 4                                                
                         }
+                        
+                        
                         
                         
                         Canvas {
@@ -438,6 +454,53 @@ import QtQuick 2.12
                             
                         }                        
                       }
+                      
+                      Rectangle{
+                        id: game__title
+                        color: theme.buttons
+                        width: game__title_name.contentWidth+20
+                        height:30
+                        radius:2
+                        visible: selected ? 1 : 0
+                        anchors {
+                            bottom: game__is_selected.bottom;
+                        }        
+                        anchors.topMargin: -4                  
+                        anchors.horizontalCenter: parent.horizontalCenter
+                        //x: 400
+                        y:-40
+                        //y: itemWidth
+                        z: 20 * index
+                        
+                        Text{
+                          id:game__title_name
+                          text:modelData.title
+                          anchors.horizontalCenter: parent.horizontalCenter
+                          anchors.verticalCenter: parent.verticalCenter
+                          color: theme.accent
+                          font.pixelSize: 12
+                          wrapMode: "WordWrap"
+                          horizontalAlignment: Text.AlignHCenter                        
+                        }
+                        
+                        
+                      }     
+                      
+                        Rectangle{
+                          id: game__title_triangle
+                          // anchors.horizontalCenter: delegateContainer.horizontalCenter
+                          x: itemWidth/2
+                          width:12
+                          height:12
+                          visible: selected ? 1 : 0
+                          color:theme.buttons
+                          transform: Rotation { angle: 45}
+                          anchors.top: game__title.bottom
+                          anchors.topMargin: -10    
+                        }
+                        
+                                         
+                      
                       
                     }               
                 }
