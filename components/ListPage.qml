@@ -91,7 +91,7 @@ import QtQuick 2.12
               id: header__search
               color:"white";
               anchors.top: parent.top
-              anchors.topMargin: 6 
+              anchors.topMargin: 0 
               anchors.right: parent.right
               width:200
               height: 30 
@@ -130,6 +130,7 @@ import QtQuick 2.12
                       anchors.leftMargin: 6 
                       anchors.topMargin: 8
                       color: theme.text
+                      
                       onTextEdited: {
                           gameView.currentIndex = 0 //We move the highlight to the first item
                           searchValue = header__search_input.text
