@@ -89,10 +89,10 @@ import QtQuick 2.12
                               text: modelData.name
                               anchors.top: parent.top
                               color: theme.accent
-                              font.pixelSize: 18
+                              font.pixelSize: vpx(12*screenRatio)
                               font.bold: true
                               font.family: titleFont.name
-                              height: 34
+                              height: vpx(20*screenRatio)
                               verticalAlignment: Text.AlignVCenter
                               elide: Text.ElideRight
                               width: systems.height-systems__item_title.height
@@ -122,6 +122,7 @@ import QtQuick 2.12
                                 
                                 Image {
                                     id: systems__img_bg
+                                    height: parent.height      
                                     width: parent.width      
                                     fillMode: Image.PreserveAspectFit
                                     source: "../assets/images/systems-bg/"+modelData.shortName+".jpg"

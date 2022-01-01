@@ -3,7 +3,7 @@ import QtQuick 2.12
 
   Item{
     id: listpage     
-    property var itemWidth : 600/itemsRow
+    property var itemWidth : (wrapperCSS.width-45)/itemsRow
     property var itemHeight : itemWidth
 
 
@@ -323,7 +323,7 @@ import QtQuick 2.12
                           anchors.horizontalCenter: parent.horizontalCenter
                           anchors.verticalCenter: parent.verticalCenter
                           color: theme.title
-                          font.pixelSize: 20
+                          font.pixelSize: vpx(18*screenRatio)
                           width: parent.width-20
                           wrapMode: "WordWrap"
                           horizontalAlignment: Text.AlignHCenter                        

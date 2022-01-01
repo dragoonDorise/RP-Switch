@@ -15,17 +15,17 @@ import QtQuick 2.12
           color: theme.text
         }
         
-        Image {
-            id: rp2
-            width: 36
-            fillMode: Image.PreserveAspectFit
-            source: "../assets/icons/"+ theme.footer_icon
-            asynchronous: true        
-            anchors.top: parent.top
-            anchors.left: parent.left
-            anchors.leftMargin: 42
-            anchors.topMargin: 14
-        }      
+       // Image {
+       //     id: rp2
+       //     width: 36
+       //     fillMode: Image.PreserveAspectFit
+       //     source: "../assets/icons/"+ theme.footer_icon
+       //     asynchronous: true        
+       //     anchors.top: parent.top
+       //     anchors.left: parent.left
+       //     anchors.leftMargin: 42
+       //     anchors.topMargin: 14
+       // }      
         
         
         Rectangle{
@@ -35,14 +35,16 @@ import QtQuick 2.12
             width:500
             height: parent.height
             anchors.verticalCenter: parent.verticalCenter
+            
             Rectangle{
                 id: footer__legend_A
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: footer__legend_B.left
-                anchors.rightMargin: 70
+                anchors.rightMargin: vpx(70*screenRatio)
+                
                 Rectangle{
-                    height:20
-                    width:20
+                    height:vpx(20*screenRatio)
+                    width:vpx(20*screenRatio)
                     color:"#444"
                     radius:20
                     anchors.verticalCenter: parent.verticalCenter
@@ -53,6 +55,7 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
+                         font.pixelSize: vpx(12*screenRatio)
                     }
                     Text{
                          text:"Accept"
@@ -60,6 +63,7 @@ import QtQuick 2.12
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.left: parent.right
                          anchors.leftMargin: 4
+                         font.pixelSize: vpx(10*screenRatio)
                          
                     }
                 }
@@ -68,11 +72,11 @@ import QtQuick 2.12
                 id: footer__legend_B
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: parent.right
-                anchors.rightMargin: 60
+                anchors.rightMargin: vpx(60*screenRatio)
                 
                 Rectangle{
-                    height:20
-                    width:20
+                    height:vpx(20*screenRatio)
+                    width:vpx(20*screenRatio)
                     color:"#444"
                     radius:20
                     anchors.verticalCenter: parent.verticalCenter
@@ -83,6 +87,7 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
+                         font.pixelSize: vpx(12*screenRatio)
                     }
                     Text{
                          text:"Back"
@@ -90,6 +95,7 @@ import QtQuick 2.12
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.left: parent.right
                          anchors.leftMargin: 4
+                         font.pixelSize: vpx(10*screenRatio)
                          
                     }
                 }
@@ -98,10 +104,10 @@ import QtQuick 2.12
                 id: footer__legend_Y
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: footer__legend_A.left
-                anchors.rightMargin: 64
+                anchors.rightMargin: vpx(64*screenRatio)
                 Rectangle{
-                    height:20
-                    width:20
+                    height:vpx(20*screenRatio)
+                    width:vpx(20*screenRatio)
                     color:"#444"
                     radius:20
                     anchors.verticalCenter: parent.verticalCenter
@@ -112,6 +118,7 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
+                         font.pixelSize: vpx(12*screenRatio)
                     }
                     Text{
                          text:"Zoom"
@@ -119,6 +126,7 @@ import QtQuick 2.12
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.left: parent.right
                          anchors.leftMargin: 4
+                         font.pixelSize: vpx(10*screenRatio)
                          
                     }
                 }
@@ -127,10 +135,10 @@ import QtQuick 2.12
                 id: footer__legend_X
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: footer__legend_Y.left
-                anchors.rightMargin: 80
+                anchors.rightMargin: vpx(80*screenRatio)
                 Rectangle{
-                    height:20
-                    width:20
+                    height:vpx(20*screenRatio)
+                    width:vpx(20*screenRatio)
                     color:"#444"
                     radius:20
                     anchors.verticalCenter: parent.verticalCenter
@@ -141,6 +149,7 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
+                         font.pixelSize: vpx(12*screenRatio)
                     }
                     Text{
                          text:"Favorite"
@@ -148,7 +157,7 @@ import QtQuick 2.12
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.left: parent.right
                          anchors.leftMargin: 4
-                         
+                         font.pixelSize: vpx(10*screenRatio)
                     }
                 }
             }
@@ -156,10 +165,10 @@ import QtQuick 2.12
             //     id: footer__legend_X_home
             //     anchors.verticalCenter: parent.verticalCenter
             //     anchors.right: footer__legend_Y.left
-            //     anchors.rightMargin: 70
+            //     anchors.rightMargin: vpx(70*screenRatio)
             //     Rectangle{
-            //         height:20
-            //         width:20
+            //         height:vpx(20*screenRatio)
+            //         width:vpx(20*screenRatio)
             //         color:"#444"
             //         radius:20
             //         anchors.verticalCenter: parent.verticalCenter
@@ -170,6 +179,7 @@ import QtQuick 2.12
             //              color:"white"                    
             //              anchors.verticalCenter: parent.verticalCenter
             //              anchors.horizontalCenter: parent.horizontalCenter
+            //              font.pixelSize: vpx(12*screenRatio)
             //         }
             //         Text{
             //              text:"Zoom"
@@ -177,6 +187,7 @@ import QtQuick 2.12
             //              anchors.verticalCenter: parent.verticalCenter
             //              anchors.left: parent.right
             //              anchors.leftMargin: 4
+            //              font.pixelSize: vpx(10*screenRatio)
             //              
             //         }
             //     }
@@ -186,10 +197,10 @@ import QtQuick 2.12
                 id: footer__legend_R
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: footer__legend_X.left
-                anchors.rightMargin: 60
+                anchors.rightMargin: vpx(60*screenRatio)
                 Rectangle{
-                    height:20
-                    width:20
+                    height:vpx(20*screenRatio)
+                    width:vpx(20*screenRatio)
                     color:"#444"
                     radius:20
                     anchors.verticalCenter: parent.verticalCenter
@@ -200,6 +211,7 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
+                         font.pixelSize: vpx(12*screenRatio)
                     }
                     Text{
                          text:"Next"
@@ -207,6 +219,7 @@ import QtQuick 2.12
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.left: parent.right
                          anchors.leftMargin: 4
+                         font.pixelSize: vpx(10*screenRatio)
                          
                     }
                 }
@@ -217,10 +230,10 @@ import QtQuick 2.12
                 id: footer__legend_L
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.right: footer__legend_R.left
-                anchors.rightMargin: 60
+                anchors.rightMargin: vpx(60*screenRatio)
                 Rectangle{
-                    height:20
-                    width:20
+                    height:vpx(20*screenRatio)
+                    width:vpx(20*screenRatio)
                     color:"#444"
                     radius:20
                     anchors.verticalCenter: parent.verticalCenter
@@ -231,6 +244,7 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
+                         font.pixelSize: vpx(12*screenRatio)
                     }
                     Text{
                          text:"Prev"
@@ -238,6 +252,7 @@ import QtQuick 2.12
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.left: parent.right
                          anchors.leftMargin: 4
+                         font.pixelSize: vpx(10*screenRatio)
                          
                     }
                 }

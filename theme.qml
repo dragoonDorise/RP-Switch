@@ -68,16 +68,20 @@ FocusScope {
   property var theme : api.memory.get('theme') === 'themeLight' ? themeLight : themeDark ;
   
   property var searchValue: '';
+  property var screenRatio : root.height === 480 ? 1.98 : 1.88
+  property var aspectRatio : root.width / root.height < 1.7 ? 43 : 169
+
+
+  property var itemsNumber : aspectRatio === 43 ? 3 : 5
   
   //used by Zoom in game lists
-  property var itemsRow : api.memory.get('itemsRow') ? api.memory.get('itemsRow') : 3 ;
+  property var itemsRow : api.memory.get('itemsRow') ? api.memory.get('itemsRow') : itemsNumber ;
   
   //Used to hide or show the header
   property var headerHeightCorrection: api.memory.get('headerHeightCorrection') === 90 ? 90 : 0;
-  property var rp2ratio : root.height === 480 ? 1.98 : 1.88
   property var wrapperCSS : {
-      "width": 640,
-      "height": vpx(480*rp2ratio),
+      "width": parent.width,
+      "height": parent.height,
       "background": theme.background,      
   }
   
@@ -85,24 +89,24 @@ FocusScope {
   
   property var headerCSS : {
       "width": wrapperCSS.width,
-      "height": vpx(90*rp2ratio),
+      "height": vpx(90*screenRatio),
       "background": "transparent",
   }
-  
-  
-  property var footerCSS : {
-      "width": wrapperCSS.width,
-      "height": vpx(49*rp2ratio),
-      "background": "transparent",
-      
-  }    
   
   property var mainCSS : {
       "width": wrapperCSS.width,
       "height": wrapperCSS.height - headerCSS.height - footerCSS.height,
       "background": "transparent",
       
-  }   
+  }     
+  
+  property var footerCSS : {
+      "width": wrapperCSS.width,
+      "height": vpx(49*screenRatio),
+      "background": "transparent",
+      
+  }    
+  
   
 
   
@@ -130,10 +134,23 @@ FocusScope {
  
   function toggleItemsRow(){
     
-      if ( api.memory.get('itemsRow') >= 5 ){
-        api.memory.set('itemsRow', 3);
+      if(aspectRatio === 43){
+            
+        if ( api.memory.get('itemsRow') >= 5 ){
+          api.memory.set('itemsRow', 3);
+        }else{
+          api.memory.set('itemsRow', itemsRow+1);
+        }
+      
       }else{
-        api.memory.set('itemsRow', itemsRow+1);
+            
+        if ( api.memory.get('itemsRow') >= 7 ){
+          api.memory.set('itemsRow', 5);
+        }else{
+          api.memory.set('itemsRow', itemsRow+1);
+        }
+      
+      
       }
 
   }  
@@ -250,8 +267,8 @@ FocusScope {
   Rectangle {
       id: wrapper
       color: wrapperCSS.background
-      width: 640
-      height: 480
+      width: wrapperCSS.width
+      height: wrapperCSS.height
       anchors.top: parent.top
         // Image {
         //     id: collectionLogo
