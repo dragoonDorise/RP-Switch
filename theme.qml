@@ -72,13 +72,13 @@ FocusScope {
   property var aspectRatio : root.width / root.height < 1.7 ? 43 : 169
 
 
-  property var itemsNumber : aspectRatio === 43 ? 3 : 5
+  property var itemsNumber : aspectRatio === 43 ? 3 : 4
   
   //used by Zoom in game lists
   property var itemsRow : api.memory.get('itemsRow') ? api.memory.get('itemsRow') : itemsNumber ;
   
   //Used to hide or show the header
-  property var headerHeightCorrection: api.memory.get('headerHeightCorrection') === 90 ? 90 : 0;
+  property var headerHeightCorrection: api.memory.get('headerHeightCorrection') === headerCSS.height ? headerCSS.height : 0;
   property var wrapperCSS : {
       "width": parent.width,
       "height": parent.height,
@@ -102,7 +102,7 @@ FocusScope {
   
   property var footerCSS : {
       "width": wrapperCSS.width,
-      "height": vpx(49*screenRatio),
+      "height": 49*screenRatio,
       "background": "transparent",
       
   }    
@@ -120,13 +120,13 @@ FocusScope {
   
  
   function toggleZoom(){
-    if(headerHeightCorrection === 90){
+    if(headerHeightCorrection === headerCSS.height){
       api.memory.set('headerHeightCorrection', 0);
       headerHeightCorrection = 0
       toggleSound.play()
     }else{
-      api.memory.set('headerHeightCorrection', 90);
-      headerHeightCorrection = 90
+      api.memory.set('headerHeightCorrection', headerCSS.height);
+      headerHeightCorrection = headerCSS.height
       toggleSound.play()
     }
   }
