@@ -89,7 +89,7 @@ FocusScope {
   
   property var headerCSS : {
       "width": wrapperCSS.width,
-      "height": vpx(90*screenRatio),
+      "height": 90,
       "background": "transparent",
   }
   
