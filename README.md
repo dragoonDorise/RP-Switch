@@ -4,20 +4,24 @@
 
 Pegasus Frontend Theme optimized for the Retroid Pocket 2 Screen. You need to have Pegasus installed in your Retroid Pocket
 
-## Installing Pegasus on the Retroid Pocket 2
+**New! Now it's also compatible with 16:9 and 5:3 handhelds**
 
-Pegasus needs some setup work but is easy as pie if you follow mi [guide for dummies](https://github.com/dragoonDorise/pegasus-rp2-metadata)
+<img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/RG552.jpg">
+
+## Installing Pegasus on your handheld
+
+Pegasus needs some setup work but is easy as pie if you follow my [guide for dummies for RP2](https://github.com/dragoonDorise/pegasus-rp2-metadata)or my other [guide for dummies for RG552](https://github.com/dragoonDorise/pegasus-552-metadata)
 
 ## Assets needed
+
 For this theme you need the following media types from [skraper](http://skraper.net):
-* screenshot
-* wheel
 
-You can also download some pre scraped assets from here: https://bit.ly/2Ie0p21
-
-*Keep in mind these assets may not work with your rom collection. These assets have been scrapped from a collection where there the rom file only has the game name and nothing else, ie: Super Mario World.zip and not Super Mario World (JP).zip. If you want to use this set you need to remove all the extra info from the rom filename.* You can rename your collection in Bulk using [this app for Windows](https://www.bulkrenameutility.co.uk/#mainscreen) or using Automator in a Mac.
+- screenshot
+- wheel
 
 ## Theme Installation
+
+- If you download the Pegasus 552 Metadata, this theme is included so you don't need to install anything else.
 
 1 Download the [latest version](https://github.com/dragoonDorise/RP-Switch/releases/latest)
 
