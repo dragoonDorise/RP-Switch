@@ -31,7 +31,7 @@ import QtQuick 2.12
         id: header
         color: "transparent"
         width: headerCSS.width
-        height: headerCSS.height
+        height: header_inner.height+header__border.height+30
         anchors.top: parent.top
         // visible:false
         clip:true
@@ -44,15 +44,15 @@ import QtQuick 2.12
           anchors.leftMargin: 30          
           color:"transparent"
           width:parent.width-60
-          height: 40
+          height: aspectRatio === 43 ? 40 : 80
           
           Rectangle{
             id: header__system
             anchors.top: parent.top
             anchors.left: parent.left
             anchors.topMargin: 0
-            width:  40
-            height: 40  
+            width:  aspectRatio === 43 ? 40 : 60
+            height: aspectRatio === 43 ? 40 : 60 
             color:"transparent"          
             Image {
                 id: header__system_logo
@@ -93,8 +93,8 @@ import QtQuick 2.12
               anchors.top: parent.top
               anchors.topMargin: 0 
               anchors.right: parent.right
-              width:200
-              height: 30 
+              width: aspectRatio === 43 ? 200 : 400
+              height: aspectRatio === 43 ? 30 : 60
               //anchors.verticalCenter: parent.verticalCenter                
               border.color: theme.text
               border.width:1
@@ -103,10 +103,10 @@ import QtQuick 2.12
               
                 Rectangle{
                     id: header__search_button
-                    height:16
-                    width:16
+                    height:aspectRatio === 43 ? 16 : 32
+                    width:aspectRatio === 43 ? 16 : 32
                     color:"#444"
-                    radius:20
+                    radius: header__search_button.width
                     anchors.verticalCenter: parent.verticalCenter
                     anchors.right: parent.right 
                     anchors.rightMargin: 6 
@@ -116,21 +116,24 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
-                         font.pixelSize:8
+                         font.pixelSize: aspectRatio === 43 ? 8 : 18
                     }
                 }              
               
                   TextInput{
+                      property var marginRight: aspectRatio === 43 ? 40 : 100
                       id:header__search_input
+                      clip:true
                       text:"Search.."
-                      width:parent.width
+                      width:parent.width-marginRight
                       height: parent.height                   
                       anchors.top: parent.top
                       anchors.left: parent.left
-                      anchors.leftMargin: 6 
-                      anchors.topMargin: 8
+                      anchors.leftMargin: aspectRatio === 43 ? 6  : 24
+                      anchors.topMargin:  aspectRatio === 43 ? 8 : 44
                       color: theme.text
-                      
+                      anchors.verticalCenter: parent.verticalCenter
+                      font.pixelSize: aspectRatio === 43 ? 14 : 28
                       onTextEdited: {
                           gameView.currentIndex = 0 //We move the highlight to the first item
                           searchValue = header__search_input.text
