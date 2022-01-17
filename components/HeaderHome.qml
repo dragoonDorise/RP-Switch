@@ -15,14 +15,13 @@ import QtQuick 2.12
         anchors.top: parent.top
         anchors.topMargin: 34
         anchors.rightMargin: aspectRatio === 43 ? 16 : 80
-        
+        visible: headerHeightCorrection === 0 ? 1 : 0;
         Text{
             id: header__battery_number
             text: Math.floor(api.device.batteryPercent*100)+"%"    
             anchors { top: parent.top }   
             color: theme.title
             font.pixelSize: aspectRatio === 43 ? 18 : 32
-            visible: headerHeightCorrection === 0 ? 1 : 0;
         }      
         
         Image {
