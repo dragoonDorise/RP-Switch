@@ -23,7 +23,7 @@ FocusScope {
  property var currentCollectionIndex: {
      if(currentCollectionIndexMemory)
     return currentCollectionIndexMemory;
-    if(currentCollectionIndexMemory)
+    if(!currentCollectionIndexMemory)
     return 0
  }
 
