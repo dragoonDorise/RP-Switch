@@ -1,6 +1,9 @@
 import QtQuick 2.12
     Rectangle {
-        property var buttonSize: aspectRatio === 43 ? 18 : 9
+        property var buttonSize: aspectRatio === 43 ? 10 : 6
+        property var buttonTextSize: aspectRatio === 43 ? 14 : 14
+        property var buttonRoundSize: aspectRatio === 43 ? 20 : 24
+        property var buttonRoundTextSize: aspectRatio === 43 ? 12 : 16
         id: footer
         color: footerCSS.background
         width: footerCSS.width
@@ -55,8 +58,8 @@ import QtQuick 2.12
                 anchors.centerIn:  aspectRatio = 43 ? none : parent
                 Rectangle{
                     id: footer__button_B
-                    height:20*screenRatio
-                    width:20*screenRatio
+                    height:buttonRoundSize
+                    width:buttonRoundSize
                     color:"#444"
                     radius:20
                     anchors.verticalCenter: parent.verticalCenter
@@ -65,7 +68,7 @@ import QtQuick 2.12
                          color:"white"                    
                          anchors.verticalCenter: parent.verticalCenter
                          anchors.horizontalCenter: parent.horizontalCenter
-                         font.pixelSize: 12*screenRatio
+                         font.pixelSize: buttonRoundTextSize
                     }                  
                 }
                 
@@ -75,7 +78,7 @@ import QtQuick 2.12
                      anchors.verticalCenter: parent.verticalCenter
                      anchors.left: footer__button_B.right
                      anchors.leftMargin: 4
-                     font.pixelSize: 10*screenRatio
+                     font.pixelSize: buttonTextSize
                      
                 }
               
@@ -101,8 +104,8 @@ import QtQuick 2.12
             anchors.centerIn:  aspectRatio = 43 ? none : parent
             Rectangle{
               id: footer__button_A
-              height:20*screenRatio
-              width:20*screenRatio
+              height:buttonRoundSize
+              width:buttonRoundSize
               color:"#444"
               radius:20
               anchors.verticalCenter: parent.verticalCenter
@@ -111,7 +114,7 @@ import QtQuick 2.12
                  color:"white"                    
                  anchors.verticalCenter: parent.verticalCenter
                  anchors.horizontalCenter: parent.horizontalCenter
-                 font.pixelSize: 12*screenRatio
+                 font.pixelSize: buttonRoundTextSize
               }                  
             }
             
@@ -121,7 +124,7 @@ import QtQuick 2.12
                anchors.verticalCenter: parent.verticalCenter
                anchors.left: footer__button_A.right
                anchors.leftMargin: 4
-               font.pixelSize: 10*screenRatio
+               font.pixelSize: buttonTextSize
                
             }
             
@@ -146,8 +149,8 @@ import QtQuick 2.12
               anchors.centerIn:  aspectRatio = 43 ? none : parent
               Rectangle{
                 id: footer__button_Y
-                height:20*screenRatio
-                width:20*screenRatio
+                height:buttonRoundSize
+                width:buttonRoundSize
                 color:"#444"
                 radius:20
                 anchors.verticalCenter: parent.verticalCenter
@@ -156,7 +159,7 @@ import QtQuick 2.12
                  color:"white"                    
                  anchors.verticalCenter: parent.verticalCenter
                  anchors.horizontalCenter: parent.horizontalCenter
-                 font.pixelSize: 12*screenRatio
+                 font.pixelSize: buttonRoundTextSize
                 }                  
               }
               
@@ -166,7 +169,7 @@ import QtQuick 2.12
                  anchors.verticalCenter: parent.verticalCenter
                  anchors.left: footer__button_Y.right
                  anchors.leftMargin: 4
-                 font.pixelSize: 10*screenRatio
+                 font.pixelSize: buttonTextSize
                  
               }
             
@@ -191,8 +194,8 @@ import QtQuick 2.12
               anchors.centerIn:  aspectRatio = 43 ? none : parent
               Rectangle{
               id: footer__button_X
-              height:20*screenRatio
-              width:20*screenRatio
+              height:buttonRoundSize
+              width:buttonRoundSize
               color:"#444"
               radius:20
               anchors.verticalCenter: parent.verticalCenter
@@ -201,7 +204,7 @@ import QtQuick 2.12
                color:"white"                    
                anchors.verticalCenter: parent.verticalCenter
                anchors.horizontalCenter: parent.horizontalCenter
-               font.pixelSize: 12*screenRatio
+               font.pixelSize: buttonRoundTextSize
               }                  
               }
               
@@ -211,7 +214,7 @@ import QtQuick 2.12
                anchors.verticalCenter: parent.verticalCenter
                anchors.left: footer__button_X.right
                anchors.leftMargin: 4
-               font.pixelSize: 10*screenRatio
+               font.pixelSize: buttonTextSize
                
               }
             
@@ -238,8 +241,8 @@ import QtQuick 2.12
               anchors.centerIn:  aspectRatio = 43 ? none : parent
               Rectangle{
               id: footer__button_R
-              height:20*screenRatio
-              width:20*screenRatio
+              height:buttonRoundSize
+              width:buttonRoundSize
               color:"#444"
               radius:20
               anchors.verticalCenter: parent.verticalCenter
@@ -248,7 +251,7 @@ import QtQuick 2.12
                color:"white"                    
                anchors.verticalCenter: parent.verticalCenter
                anchors.horizontalCenter: parent.horizontalCenter
-               font.pixelSize: 12*screenRatio
+               font.pixelSize: buttonRoundTextSize
               }                  
               }
               
@@ -258,7 +261,7 @@ import QtQuick 2.12
                anchors.verticalCenter: parent.verticalCenter
                anchors.left: footer__button_R.right
                anchors.leftMargin: 4
-               font.pixelSize: 10*screenRatio
+               font.pixelSize: buttonTextSize
                
               }
             
@@ -283,8 +286,8 @@ import QtQuick 2.12
               anchors.centerIn:  aspectRatio = 43 ? none : parent
               Rectangle{
               id: footer__button_L
-              height:20*screenRatio
-              width:20*screenRatio
+              height:buttonRoundSize
+              width:buttonRoundSize
               color:"#444"
               radius:20
               anchors.verticalCenter: parent.verticalCenter
@@ -293,7 +296,7 @@ import QtQuick 2.12
                color:"white"                    
                anchors.verticalCenter: parent.verticalCenter
                anchors.horizontalCenter: parent.horizontalCenter
-               font.pixelSize: 12*screenRatio
+               font.pixelSize: buttonRoundTextSize
               }                  
               }
               
@@ -303,7 +306,7 @@ import QtQuick 2.12
                anchors.verticalCenter: parent.verticalCenter
                anchors.left: footer__button_L.right
                anchors.leftMargin: 4
-               font.pixelSize: 10*screenRatio
+               font.pixelSize: buttonTextSize
                
               }
             
