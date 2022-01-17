@@ -5,7 +5,7 @@ import QtQuick 2.12
     id: listpage     
     property var itemWidth : (wrapperCSS.width-45)/itemsRow
     property var itemHeight : itemWidth
-
+    
 
     Keys.onPressed: {
    

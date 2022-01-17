@@ -17,7 +17,18 @@ FocusScope {
   Component.onCompleted: homeSound.play()
   
   //System index
-  property var currentCollectionIndex : 0
+ property var currentCollectionIndexMemory : api.memory.get('currentCollectionIndex');
+
+
+ property var currentCollectionIndex: {
+     if(currentCollectionIndexMemory)
+    return currentCollectionIndexMemory;
+    if(currentCollectionIndexMemory)
+    return 0
+ }
+
+  
+  //property var currentCollectionIndex : 0
   property var currentCollection: allCollections[currentCollectionIndex]
   
   //Games index
