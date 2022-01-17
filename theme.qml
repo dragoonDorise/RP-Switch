@@ -67,9 +67,22 @@ FocusScope {
     
   property var theme : api.memory.get('theme') === 'themeLight' ? themeLight : themeDark ;
   
-  property var searchValue: '';
-  property var screenRatio : root.height === 480 ? 1.98 : 1.88
-  property var aspectRatio : root.width / root.height < 1.7 ? 43 : 169
+property var searchValue: '';
+property var screenRatio: root.height < 481 ? 1.98 : 1.88;
+property var screenProportion: root.width / root.height;
+
+
+function calculateAspectRatio(screenProportion){
+    if (screenProportion < 1.34){
+      return 43;
+    }
+   // if (screenProportion < 1.666666666666668){
+   //   return 53;
+   // }
+      return 169;    
+}
+property var aspectRatio : calculateAspectRatio(screenProportion)
+
 
 
   property var itemsNumber : aspectRatio === 43 ? 3 : 4
@@ -108,7 +121,22 @@ FocusScope {
   }    
   
   
-
+//Percentage calculator
+function vw(pixel){
+  //in 100
+  //out 1280
+  switch (aspectRatio) {
+      case 43:
+      return vpx(pixel*12.8)
+      break;
+      case 169:
+      return vpx(pixel*12.8)
+      break;
+      default:
+      return vpx(pixel*12.8)
+      break;
+  }
+}
   
   function toggleDarkMode(){
     if(theme === themeLight){
