@@ -1,9 +1,9 @@
 import QtQuick 2.12
     Rectangle {
-        property var buttonSize: aspectRatio === 43 ? 10 : 6
-        property var buttonTextSize: aspectRatio === 43 ? 14 : 14
-        property var buttonRoundSize: aspectRatio === 43 ? 20 : 24
-        property var buttonRoundTextSize: aspectRatio === 43 ? 12 : 16
+    property var buttonSize: aspectRatio === 43 ? 90 : 120*1.4
+    property var buttonTextSize: aspectRatio === 43 ? 14 : 18*1.4
+    property var buttonRoundSize: aspectRatio === 43 ? 20 : 40*1.4
+    property var buttonRoundTextSize: aspectRatio === 43 ? 12 : 22*1.4
         id: footer
         color: footerCSS.background
         width: footerCSS.width
@@ -46,23 +46,23 @@ import QtQuick 2.12
               id: footer__legend_B
               anchors.verticalCenter: parent.verticalCenter
               anchors.right: parent.right              
-              width: vw(buttonSize)
+              width: buttonSize
               height:parent.height
               color:"transparent"
-              
+              anchors.rightMargin: aspectRatio === 43 ? 0 : 40
               Rectangle{
                 id: footer__full_button_B
                 anchors.right: parent.right
                 height:parent.height
                 width:100
                 color:"transparent"
-                anchors.centerIn:  aspectRatio = 43 ? none : parent
+                //anchors.centerIn:  aspectRatio = 43 ? none : parent
                 Rectangle{
                     id: footer__button_B
                     height:buttonRoundSize
                     width:buttonRoundSize
                     color:"#444"
-                    radius:20
+                    radius:buttonRoundSize
                     anchors.verticalCenter: parent.verticalCenter
                     Text{
                          text:"B"
@@ -92,7 +92,7 @@ import QtQuick 2.12
             id: footer__legend_A
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: footer__legend_B.left
-            width: vw(buttonSize)
+            width: buttonSize
             height:parent.height
             color:"transparent"
             
@@ -108,7 +108,7 @@ import QtQuick 2.12
               height:buttonRoundSize
               width:buttonRoundSize
               color:"#444"
-              radius:20
+              radius:buttonRoundSize
               anchors.verticalCenter: parent.verticalCenter
               Text{
                  text:"A"
@@ -137,7 +137,7 @@ import QtQuick 2.12
             id: footer__legend_Y
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: footer__legend_A.left
-            width: vw(buttonSize)
+            width: buttonSize
             height:parent.height
             color:"transparent"
             
@@ -153,7 +153,7 @@ import QtQuick 2.12
                 height:buttonRoundSize
                 width:buttonRoundSize
                 color:"#444"
-                radius:20
+                radius:buttonRoundSize
                 anchors.verticalCenter: parent.verticalCenter
                 Text{
                  text:"Y"
@@ -182,7 +182,7 @@ import QtQuick 2.12
             id: footer__legend_X
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: footer__legend_Y.left
-            width: vw(buttonSize)
+            width: buttonSize
             height:parent.height
             color:"transparent"
             visible: currentPage === 'HomePage' ? 0 : 1 ;
@@ -198,7 +198,7 @@ import QtQuick 2.12
               height:buttonRoundSize
               width:buttonRoundSize
               color:"#444"
-              radius:20
+              radius:buttonRoundSize
               anchors.verticalCenter: parent.verticalCenter
               Text{
                text:"X"
@@ -229,7 +229,7 @@ import QtQuick 2.12
             id: footer__legend_R
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: footer__legend_X.left
-            width: vw(buttonSize)
+            width: buttonSize
             height:parent.height
             color:"transparent"
             visible: currentPage === 'HomePage' ? 0 : 1 ;
@@ -245,7 +245,7 @@ import QtQuick 2.12
               height:buttonRoundSize
               width:buttonRoundSize
               color:"#444"
-              radius:20
+              radius:buttonRoundSize
               anchors.verticalCenter: parent.verticalCenter
               Text{
                text:"R"
@@ -274,7 +274,7 @@ import QtQuick 2.12
             id: footer__legend_L
             anchors.verticalCenter: parent.verticalCenter
             anchors.right: footer__legend_R.left
-            width: vw(buttonSize)
+            width: buttonSize
             height:parent.height
             color:"transparent"
             visible: currentPage === 'HomePage' ? 0 : 1 ;
@@ -290,7 +290,7 @@ import QtQuick 2.12
               height:buttonRoundSize
               width:buttonRoundSize
               color:"#444"
-              radius:20
+              radius:buttonRoundSize
               anchors.verticalCenter: parent.verticalCenter
               Text{
                text:"L"

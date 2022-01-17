@@ -168,14 +168,14 @@ import QtQuick 2.12
           anchors.right: parent.right
           anchors.top: systems.bottom
           opacity:1
-          height: 120
+          height: aspectRatio === 43 ? 120 : 180
           width: parent.width
           
           Rectangle{
             id: options_buttons
             anchors.verticalCenter: parent.verticalCenter
             anchors.horizontalCenter: parent.horizontalCenter
-            height:58
+            height:aspectRatio == 43 ? 58 : 78
             width: 280
             color: "transparent"
             
@@ -183,8 +183,8 @@ import QtQuick 2.12
             // Fav icon
              Rectangle{
               id: options_buttons_fav
-              width:58
-              height:58
+              width:aspectRatio == 43 ? 58 : 78
+              height:aspectRatio == 43 ? 58 : 78
               color: theme.buttons
               radius:100
               anchors.left: parent.left
@@ -232,8 +232,8 @@ import QtQuick 2.12
              // Played
              Rectangle{
               id: options_buttons_played
-              width:58
-              height:58
+              width:aspectRatio == 43 ? 58 : 78
+              height:aspectRatio == 43 ? 58 : 78
               color: theme.buttons
               radius:100
               anchors.left: options_buttons_fav.right
@@ -282,8 +282,8 @@ import QtQuick 2.12
             // All icon
              Rectangle{
               id: options_buttons_all
-              width:58
-              height:58
+              width:aspectRatio == 43 ? 58 : 78
+              height:aspectRatio == 43 ? 58 : 78
               color: theme.buttons
               radius:100
               anchors.left: options_buttons_played.right
@@ -333,8 +333,8 @@ import QtQuick 2.12
             // Theme icon
              Rectangle{
               id: options_buttons_theme
-              width:58
-              height:58
+              width:aspectRatio == 43 ? 58 : 78
+              height:aspectRatio == 43 ? 58 : 78
               color:theme.buttons
               radius:100
               anchors.left: options_buttons_all.right
@@ -388,8 +388,8 @@ import QtQuick 2.12
             // Theme icon
              Rectangle{
               id: options_buttons_search
-              width:58
-              height:58
+              width:aspectRatio == 43 ? 58 : 78
+              height:aspectRatio == 43 ? 58 : 78
               color:theme.buttons
               radius:100
               anchors.left: options_buttons_theme.right
