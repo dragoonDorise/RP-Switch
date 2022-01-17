@@ -9,6 +9,7 @@ import QtQuick 2.12
         width: footerCSS.width
         height: footerCSS.height
         anchors.top: main.bottom
+        
         Rectangle{
           id: footer__border
           anchors.top: parent.top

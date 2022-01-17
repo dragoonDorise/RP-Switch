@@ -115,7 +115,7 @@ property var aspectRatio : calculateAspectRatio(screenProportion)
   
   property var footerCSS : {
       "width": wrapperCSS.width,
-      "height": 49*screenRatio,
+      "height": 39*screenRatio,
       "background": "transparent",
       
   }    

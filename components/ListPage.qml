@@ -182,7 +182,7 @@ import QtQuick 2.12
        
     Rectangle {
         id: main
-        color: "transparent"
+        color: mainCSS.background
         width: wrapperCSS.width
         height: mainCSS.height
         anchors.top: header.bottom
@@ -197,8 +197,8 @@ import QtQuick 2.12
             anchors.left: parent.left
             anchors.top: parent.top
             anchors.bottom: parent.bottom
-        
-             clip:true
+             
+            clip:true
             
             GridView {
                 id: gameView
@@ -209,15 +209,15 @@ import QtQuick 2.12
                 
                 anchors.left: parent.left
                 anchors.leftMargin: 20
-                
+                anchors.topMargin: 55 
                 anchors.top: parent.top
                 anchors.bottom: parent.bottom        
                 focus: currentPage === 'ListPage' ? true : false ;                
-                anchors.topMargin: 35                     
+                                  
                 snapMode: ListView.SnapOneItem
                 highlightRangeMode: ListView.StrictlyEnforceRange
                 preferredHighlightBegin: 1
-                preferredHighlightEnd: itemWidth*itemsRow/2
+                preferredHighlightEnd: itemWidth*itemsRow/itemsRow
                 Keys.onUpPressed:       { moveCurrentIndexUp();navSound.play(); }
                 Keys.onDownPressed:     { moveCurrentIndexDown();navSound.play(); }
                 Keys.onLeftPressed:     { moveCurrentIndexLeft();navSound.play(); }
