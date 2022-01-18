@@ -35,7 +35,7 @@ import QtQuick 2.12
         anchors.top: parent.top
         // visible:false
         clip:true
-        
+        property var percent:  api.device.batteryPercent*100
         Rectangle{
           id: header_inner
           anchors.top: parent.top
