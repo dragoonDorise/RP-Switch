@@ -31,7 +31,7 @@ import QtQuick 2.12
         id: header
         color: "transparent"
         width: headerCSS.width
-        height: header_inner.height+header__border.height+30
+        height: header_inner.height+header__border.height+aspectRatio === 43 ? 40 : 90
         anchors.top: parent.top
         // visible:false
         clip:true
@@ -238,6 +238,10 @@ import QtQuick 2.12
                       width: itemWidth
                       height: itemHeight
                     
+                      //Random Game
+                      property var maximum: currentCollection.games.count
+                      property var minimum: 0
+                      property var randomGame:  Math.floor(Math.random() * (maximum - minimum + 1)) + minimum;
                   
                       Keys.onPressed: {
                         //Launch game
@@ -254,7 +258,17 @@ import QtQuick 2.12
                           return;
                       }  
                         
-                        
+                                                
+                        //Random Game     
+                        if (api.keys.isPageUp(event)) {
+                          event.accepted = true;
+                          
+                          currentGameIndex = randomGame
+                          launchSound.play()
+                          currentGame.launch();                            
+                          
+                          return;
+                        }  
                      
                         
                         //toggleItemsRow     

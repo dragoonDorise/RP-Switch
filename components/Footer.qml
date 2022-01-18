@@ -1,6 +1,6 @@
 import QtQuick 2.12
     Rectangle {
-    property var buttonSize: aspectRatio === 43 ? 90 : 120*1.4
+    property var buttonSize: aspectRatio === 43 ? 85 : 120*1.4
     property var buttonTextSize: aspectRatio === 43 ? 14 : 18*1.4
     property var buttonRoundSize: aspectRatio === 43 ? 20 : 40*1.4
     property var buttonRoundTextSize: aspectRatio === 43 ? 12 : 22*1.4
@@ -49,7 +49,7 @@ import QtQuick 2.12
               width: buttonSize
               height:parent.height
               color:"transparent"
-              anchors.rightMargin: aspectRatio === 43 ? 0 : 40
+              anchors.rightMargin: aspectRatio === 43 ? -20 : 40
               Rectangle{
                 id: footer__full_button_B
                 anchors.right: parent.right
@@ -314,6 +314,50 @@ import QtQuick 2.12
             }
             
           }          
+Rectangle{
+    id: footer__legend_L2
+    anchors.verticalCenter: parent.verticalCenter
+    anchors.right: footer__legend_L.left
+    width: buttonSize
+    height:parent.height
+    color:"transparent"
+    visible: currentPage === 'HomePage' ? 0 : 1 ;
+      Rectangle{
+      id: footer__full_button_L2
+      anchors.right: parent.right
+      height:parent.height
+      width:100
+      color:"transparent"
+      anchors.centerIn:  aspectRatio = 43 ? none : parent
+      Rectangle{
+      id: footer__button_L2
+      height:buttonRoundSize
+      width:buttonRoundSize
+      color:"#444"
+      radius:buttonRoundSize
+      anchors.verticalCenter: parent.verticalCenter
+      Text{
+       text:"L2"
+       color:"white"                    
+       anchors.verticalCenter: parent.verticalCenter
+       anchors.horizontalCenter: parent.horizontalCenter
+       font.pixelSize: buttonRoundTextSize
+      }                  
+      }
+      
+      Text{
+       text:"Random"
+       color: theme.text                       
+       anchors.verticalCenter: parent.verticalCenter
+       anchors.left: footer__button_L2.right
+       anchors.leftMargin: 4
+       font.pixelSize: buttonTextSize
+       
+      }
+    
+    }
+    
+  }          
           
     
     
