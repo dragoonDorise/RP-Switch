@@ -16,10 +16,8 @@ FocusScope {
   
   Component.onCompleted: homeSound.play()
   
-  //System index
+  //System index from memory so we can remember the last system we were in
  property var currentCollectionIndexMemory : api.memory.get('currentCollectionIndex');
-
-
  property var currentCollectionIndex: {
      if(currentCollectionIndexMemory)
     return currentCollectionIndexMemory;
@@ -27,8 +25,6 @@ FocusScope {
     return 0
  }
 
-  
-  //property var currentCollectionIndex : 0
   property var currentCollection: allCollections[currentCollectionIndex]
   
   //Games index
@@ -43,7 +39,8 @@ FocusScope {
           return  currentCollection.games.get(searchGames.mapToSource(currentGameIndex))   
       return currentCollection.games.get(currentGameIndex)
   }
-      
+   
+  //We remove the favorite, lastplayed, etc collections so we can put them in another place   
   property var allCollections: {
       let collections = api.collections.toVarArray()
       collections.unshift({"name": "All Games", "shortName": "all-allgames", "games": api.allGames})      
@@ -54,7 +51,8 @@ FocusScope {
   
   FontLoader { id: titleFont; source: "assets/fonts/Nintendo_Switch_UI_Font.ttf" }
   
-  property var currentPage : 'HomePage';
+  // We show the game list if we have stored the collection ID
+  property var currentPage : currentCollectionIndexMemory ? 'ListPage' : 'HomePage';
   
   property var themeLight : {
       "background": "#ebebeb",

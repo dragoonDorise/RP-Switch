@@ -2,6 +2,7 @@ import QtQuick 2.12
 
 
   Item{
+    
     id: homepage  
   
     HeaderHome{
@@ -65,6 +66,7 @@ import QtQuick 2.12
                                 
                                 //We update the collection we want to browse
                                 currentCollectionIndex = systems__item_container.ListView.view.currentIndex+3
+                                //We store the current collection so we go back there after playing
                                 api.memory.set('currentCollectionIndex', currentCollectionIndex);
                                 //We change Pages
                                 navigate('ListPage');

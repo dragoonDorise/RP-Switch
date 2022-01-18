@@ -241,14 +241,21 @@ import QtQuick 2.12
                   
                       Keys.onPressed: {
                         //Launch game
-                        if (api.keys.isAccept(event)) {
-                            event.accepted = true;
-                            currentGameIndex = index
-                            launchSound.play()
-                            currentGame.launch();                            
-                            return;
-                        }  
+                      if (api.keys.isAccept(event)) {
+                          event.accepted = true;
+                          currentGameIndex = index
+                          launchSound.play()
+                          currentGame.launch();                            
+                          return;
+                      }  
+                      //We reset collection when going home
+                      if (api.keys.isCancel(event)) {
+                          api.memory.unset('currentCollectionIndex')                              
+                          return;
+                      }  
                         
+                        
+                     
                         
                         //toggleItemsRow     
                         if (api.keys.isFilters(event)) {
