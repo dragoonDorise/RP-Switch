@@ -97,6 +97,8 @@ There are three zoom levels, you can toggle trough them by pressing hte button Y
 
 <img src="https://raw.githubusercontent.com/dragoonDorise/RP-Switch/main/screenshots/games5.jpg">
 
+If want to help me buy more systems so I can test my themes and scripts please consider a donation on [Patreon](https://www.patreon.com/dragoonDorise)
+
 ## Thanks To
 
 - PlayingKarrde for creating [switchOS](https://github.com/PlayingKarrde/switchOS)
